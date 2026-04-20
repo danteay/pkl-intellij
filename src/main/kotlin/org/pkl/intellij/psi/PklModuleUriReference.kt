@@ -110,6 +110,8 @@ class PklModuleUriReference(uri: PklModuleUri, rangeInElement: TextRange) :
       ?: emptyArray()
   }
 
+  override fun bindToElement(element: PsiElement): PsiElement = this.element
+
   override fun handleElementRename(newElementName: String): PsiElement {
     val stringConstant = element.stringConstant
     val stringStart = stringConstant.stringStart
